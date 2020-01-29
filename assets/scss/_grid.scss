@@ -1,0 +1,92 @@
+@import "variables";
+
+/* custom variables and configs */
+
+$gridColumns: 12;
+$screens: (
+  "extra-large": "xl",
+  "large": "lg",
+  "medium": "md",
+  "small": "sm",
+  "extra-small": "xs"
+);
+$max-width-container: 1200px;
+$max-width-container-fluid: 100%;
+
+/* end custom variables and configs */
+
+/* */
+
+@mixin container-base {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: $max-width-container;
+  @include container-base;
+}
+
+.container-fluid {
+  max-width: $max-width-container-fluid;
+  @include container-base;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
+}
+
+/* */
+
+/* grid generator */
+
+@for $i from 1 through $gridColumns {
+
+  @each $screenType in map-values($screens) {
+    $size: 100% / $gridColumns;
+    $sizeColumn: $size * $i;
+
+    @if $screenType == xs {
+      .col-#{$i} {
+        width: $sizeColumn;
+      }
+    }
+
+    @else {
+      .col-#{$screenType}-#{$i} {
+        width: $sizeColumn;
+
+        @if $screenType == xl {
+          @media only screen and (max-width: $breakpoint-lg) {
+            width: 100%;
+          }
+        }
+
+        @if $screenType == lg {
+          @media only screen and (max-width: $breakpoint-md) {
+            width: 100%;
+          }
+        }
+
+        @if $screenType == md {
+          @media only screen and (max-width: $breakpoint-sm) {
+            width: 100%;
+          }
+        }
+
+        @if $screenType == sm {
+          @media only screen and (max-width: $breakpoint-xs) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* end grid generator */

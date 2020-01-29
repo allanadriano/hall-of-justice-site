@@ -1,0 +1,22 @@
+@import 'variables';
+@import 'grid';
+
+
+/* micro reset */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* end micro reset */
+
+body {
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 18px
+  }
+}
