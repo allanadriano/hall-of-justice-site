@@ -11,7 +11,6 @@
         col-xl-2
       </div>
     </div>
-
     <div class="row">
       <div class="col-lg-6">
         col-lg-6
@@ -23,7 +22,6 @@
         col-lg-2
       </div>
     </div>
-
     <div class="row">
       <div class="col-md-7">
         col-md-7
@@ -35,7 +33,6 @@
         col-md-1
       </div>
     </div>
-
     <div class="row">
       <div class="col-sm-9">
         col-sm-9
@@ -47,7 +44,6 @@
         col-sm-2
       </div>
     </div>
-
     <div class="row">
       <div class="col-2">
         col-2

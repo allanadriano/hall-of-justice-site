@@ -1,5 +1,9 @@
 <template>
-  <div>
-    Index Default
-  </div>
+  <main style="min-height: 2500px"></main>
 </template>
+
+<script>
+export default {
+  layout: 'default'
+}
+</script>
