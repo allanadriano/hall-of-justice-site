@@ -50,7 +50,9 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg'
   ],
   /*
    ** Axios module configuration

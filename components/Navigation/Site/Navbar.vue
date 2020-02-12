@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import HallMenuItems from '~/components/Navigation/MenuItems'
+import HallMenuItems from '~/components/Navigation/Site/MenuItems'
 import HallMenuItemsBlog from '~/components/Navigation/Blog/MenuItemsBlog'
 import HallMenuItemsForum from '~/components/Navigation/Forum/MenuItemsForum'
 

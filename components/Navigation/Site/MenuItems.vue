@@ -11,6 +11,7 @@
     </li>
     <li class="menu-item first-item-mobile">
       <a href="#">
+        <img src="~/assets/img/icons/user.svg" />
         Login
       </a>
     </li>
