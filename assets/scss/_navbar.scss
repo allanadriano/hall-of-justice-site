@@ -87,7 +87,12 @@
         &.active {
           background: $light-slate-blue-color;
         }
+
+        img {
+          margin-right: 5px;
+        }
       }
+
       &.first-item-mobile {
         @media only screen and (max-width: $breakpoint-sm) {
           order: -1;
