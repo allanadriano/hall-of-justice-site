@@ -10,8 +10,7 @@
       <nuxt-link to="/contato">Contato</nuxt-link>
     </li>
     <li class="menu-item first-item-mobile">
-      <a href="#">
-        <img src="~/assets/img/icons/user.svg" />
+      <a href="#" class="active">
         Login
       </a>
     </li>
