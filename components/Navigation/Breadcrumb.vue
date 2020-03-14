@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     scrollTopFixed() {
-      let element = document.querySelector('.breadcrumb-component');
+      let element = document.querySelector('.breadcrumb-component')
 
       if (window.pageYOffset > 200) {
         element.classList.add('breadcrumb-fixed')
@@ -68,7 +68,6 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    // border-bottom: 2px solid $light-slate-blue-color;
     width: 100%;
     margin: 0 auto;
 
