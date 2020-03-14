@@ -2,9 +2,15 @@
 
 .menu-mobile {
   display: none;
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    display: flex;
+    transform: translateX(-100%);
+  }
+
   &.open {
     @media only screen and (max-width: $breakpoint-sm) {
-      display: flex;
+      transform: translateX(0%);
     }
   }
 
