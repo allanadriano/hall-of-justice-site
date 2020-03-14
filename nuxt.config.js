@@ -19,7 +19,7 @@ export default {
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900'
+        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700'
       }
     ]
   },
@@ -50,7 +50,9 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // Doc: https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg'
   ],
   /*
    ** Axios module configuration
