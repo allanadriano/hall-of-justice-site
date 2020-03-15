@@ -6,7 +6,31 @@
   color: $white-color;
   border-radius: 2px;
 
+  &.blog {
+    margin-bottom: 40px;
+  }
+
   .card-body {
     padding: 20px;
+  }
+
+  .card-title {
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .card-post {
+    line-height: 1.5;
+  }
+
+  .card-img {
+    width: 100%;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+
+    &.blog {
+      max-height: 375px;
+      object-fit: cover;
+    }
   }
 }
