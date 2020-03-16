@@ -1,12 +1,12 @@
-// import http from './HttpService'
+import axios from '~/plugins/axios'
 
 export default {
-  async getArticles(data) {
-    const response = await this.$axios.$get('/posts', data)
+  async getAllArticles(data) {
+    const response = await axios.get('/posts', data)
     return response.data
   },
-  async getArticle(data, id) {
-    const response = await this.$axios.$get('/posts/' + id, data)
+  async getSingleArticle(id, data) {
+    const response = await axios.get('/posts/' + id, data)
     return response.data
   }
 }

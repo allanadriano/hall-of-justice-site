@@ -8,6 +8,10 @@
 
   &.blog {
     margin-bottom: 40px;
+    @media only screen and (max-width: $breakpoint-sm) {
+      border-radius: 0;
+      margin-bottom: 25px;
+    }
   }
 
   .card-body {
@@ -17,10 +21,35 @@
   .card-title {
     font-weight: 500;
     margin-bottom: 20px;
+
+    &.blog {
+      text-transform: uppercase;
+
+      @media only screen and (max-width: $breakpoint-sm) {
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+
+      @media only screen and (max-width: $breakpoint-xs) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit
   }
 
   .card-post {
     line-height: 1.5;
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      font-size: 16px;
+    }
+    @media only screen and (max-width: $breakpoint-xs) {
+      font-size: 14px;
+    }
   }
 
   .card-img {
@@ -31,6 +60,11 @@
     &.blog {
       max-height: 375px;
       object-fit: cover;
+
+      @media only screen and (max-width: $breakpoint-sm) {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+      }
     }
   }
 }
