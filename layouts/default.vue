@@ -18,6 +18,7 @@
         </div>
       </div>
     </div>
+    <br />
 
     <nuxt />
   </div>
