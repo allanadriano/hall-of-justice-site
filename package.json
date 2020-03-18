@@ -25,7 +25,8 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/svg": "^0.1.6",
     "axios": "^0.19.2",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-disqus": "^3.0.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

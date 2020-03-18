@@ -1,0 +1,47 @@
+@import 'variables';
+
+.pagination {
+  display: inline-flex;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  align-items: center;
+
+  .prev, .next {
+    padding: 5px 12px
+  }
+
+  a {
+    color: $white-color;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1;
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      font-size: 16px;
+    }
+
+    @media only screen and (max-width: $breakpoint-xs) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      background: $light-slate-blue-color;
+    }
+  }
+
+  .pagination-itens {
+    list-style: none;
+    display: flex;
+    .pagination-item {
+
+      a {
+        padding: 8px 12px;
+
+        &.active {
+          background: $light-slate-blue-color;
+          box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+        }
+      }
+    }
+  }
+}

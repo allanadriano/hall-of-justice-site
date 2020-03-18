@@ -1,15 +1,19 @@
 <template>
   <div class="blog-feed-component container">
-    <!-- breadcrumb -->
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-12">
+        <hall-breadcrumb :simpleNavigation="true" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
         <hall-card-feed
           v-for="blog in posts"
           :key="blog.id"
           :blog="blog"
         />
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <aside>
           menu lateral
         </aside>
@@ -21,6 +25,7 @@
 <script>
 import HallCardFeed from '~/components/Blog/CardFeed'
 import BlogService from '~/services/BlogService'
+import HallBreadcrumb from '~/components/Navigation/Breadcrumb'
 
 export default {
   name: 'BlogFeed',
@@ -38,7 +43,8 @@ export default {
     this.getAllArticles();
   },
   components: {
-    HallCardFeed
+    HallCardFeed,
+    HallBreadcrumb
   }
 }
 
