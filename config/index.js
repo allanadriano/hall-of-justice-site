@@ -1,6 +1,6 @@
 export default {
   app: {
-    url: `${process.env.VUE_APP_BASE_URL || 'https://hall-blog.herokuapp.com/'}`
+    url: `${process.env.VUE_APP_BASE_URL || 'https://hall-blog.herokuapp.com'}`
   },
   api: {
     url: `${process.env.VUE_APP_API_URL ||
