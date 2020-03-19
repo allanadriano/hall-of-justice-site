@@ -42,17 +42,41 @@ import HallChip from '~/components/Chip'
 import HallPolicy from '~/components/Policy'
 import HallBreadcrumb from '~/components/Navigation/Breadcrumb'
 import HallPagination from '~/components/Navigation/Pagination'
+import config from '~/config'
 
 export default {
   name: 'BlogPost',
   data () {
     return {
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+      image: 'https://placehold.it/1200x500',
       post: {},
       author: {
         name: 'Allan Oliveira',
         bio: 'Gosta de series, cinemas e outros assuntos nerds'
       }
     }
+  },
+  head () {
+    return {
+      title: this.post.title,
+      meta: [
+        { name: 'url', content: config.app.url + this.$route.fullPath },
+        { name: 'type', content: 'article' },
+        { name: 'title', content: this.post.title },
+        { name: 'description', content: this.description },
+        { name: 'image', content: this.image },
+        { name: 'twitter:creator', content: this.author.name },
+        { name: 'twitter:title', content: this.post.title },
+        { name: 'twitter:description', content: this.description },
+        { name: 'twitter:image', content: this.image },
+        { property: 'og:url', content: config.app.url + this.$route.fullPath },
+        { property: 'og:type', content: 'article' },
+        { property: 'og:title', content: this.post.title },
+        { property: 'og:description', content: this.description },
+        { property: 'og:image', content: this.image },
+      ],
+    };
   },
   methods: {
     async getSingleArticle (id) {
