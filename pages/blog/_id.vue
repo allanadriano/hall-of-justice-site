@@ -49,8 +49,7 @@ export default {
   data () {
     return {
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
-      image: 'https://placehold.it/1200x500',
-      title: this.post.title,
+      image: 'https://placehold.it/1200x500&text=post image',
       post: {},
       author: {
         name: 'Allan Oliveira',
@@ -64,16 +63,16 @@ export default {
       meta: [
         { name: 'url', content: config.app.url + this.$route.fullPath },
         { name: 'type', content: 'article' },
-        { name: 'title', content: this.title },
+        { name: 'title', content: this.post.title },
         { name: 'description', content: this.description },
         { name: 'image', content: this.image },
         { name: 'twitter:creator', content: this.author.name },
-        { name: 'twitter:title', content: this.title },
+        { name: 'twitter:title', content: this.post.title },
         { name: 'twitter:description', content: this.description },
         { name: 'twitter:image', content: this.image },
         { property: 'og:url', content: config.app.url + this.$route.fullPath },
         { property: 'og:type', content: 'article' },
-        { property: 'og:title', content: this.title },
+        { property: 'og:title', content: this.post.title },
         { property: 'og:description', content: this.description },
         { property: 'og:image', content: this.image },
       ],
