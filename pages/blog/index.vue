@@ -37,6 +37,9 @@ export default {
   methods: {
     async getAllArticles () {
       this.posts = await BlogService.getAllArticles();
+      console.log('env.BASE_URL', process.env.BASE_URL)
+      console.log('env.VUE_APP_BASE_URL', process.env.VUE_APP_BASE_URL)
+      console.log('env.VUE_APP_API_URL -> ', process.env.VUE_APP_API_URL)
     }
   },
   mounted () {
