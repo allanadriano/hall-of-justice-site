@@ -1,0 +1,39 @@
+<template>
+  <article class="card-feed-component card blog">
+    <nuxt-link :to="`blog/${blog.id}`" class="card-link">
+    <div class="card-overlay">
+      <img class="card-img blog" src="https://placehold.it/1200x500" :alt="blog.title" />
+      <h2 class="card-title blog feed">{{ blog.title }}</h2>
+    </div>
+    </nuxt-link>
+    <div class="card-body info">
+      <hall-chip info="Allan Oliveira"/>
+      <span class="date">12 de janeiro de 2020</span>
+      <hall-chip info="Cinema" />
+      <nuxt-link :to="`blog/${blog.id}`">Leia matéria</nuxt-link>
+    </div>
+    <div class="card-body">
+      <p class="card-post feed">{{ blog.body | truncate(120, '...') }}</p> <!-- <<- blog.description -->
+    </div>
+  </article>
+</template>
+<script>
+import HallChip from '~/components/Chip'
+import truncate from '~/filters/truncate'
+
+export default {
+  name: 'CardFeed',
+  props: {
+    blog: {
+      type: Object,
+      required: true
+    }
+  },
+  filters: {
+    truncate
+  },
+  components: {
+    HallChip
+  }
+}
+</script>

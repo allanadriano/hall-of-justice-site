@@ -1,0 +1,34 @@
+@import 'variables';
+
+.chip {
+  padding: 3px 10px 3px 38px;
+  color: $dark-secondary-color;
+  border-radius: 40px;
+  position: relative;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  text: {
+    decoration: none;
+    transform: uppercase
+  }
+  font: {
+    size: 14px;
+    weight: 500
+  }
+
+  &.no-image {
+    padding-left: 0px;
+  }
+
+
+  img {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    position: absolute;
+    left: 0px;
+    top: -5px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  }
+}

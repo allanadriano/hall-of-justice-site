@@ -2,16 +2,16 @@
   <div class="breadcrumb-component">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        <nuxt-link to="/1">Home</nuxt-link>
+        <nuxt-link to="/">Home</nuxt-link>
       </li>
       <li class="breadcrumb-item">
-        <nuxt-link to="/2">Blog</nuxt-link>
+        <nuxt-link :to="`/${route}`">{{ route }}</nuxt-link>
       </li>
-      <li class="breadcrumb-item">
-        <nuxt-link to="/3">Séries</nuxt-link>
+      <li class="breadcrumb-item" v-if="category">
+        <nuxt-link :to="category"> {{ category }}</nuxt-link>
       </li>
-      <li class="breadcrumb-item">
-        Séries que ainda despertam o interesse 10 anos depois
+      <li class="breadcrumb-item" v-if="title">
+        {{ title }}
       </li>
     </ol>
     <hall-scroll-progress v-if="isShowScroolProgress" />
@@ -26,8 +26,20 @@ export default {
     HallScrollProgress
   },
   props: {
-    breadcrumb: {
-      type: Object
+    route: {
+      type: String,
+      default: 'blog',
+    },
+    category: {
+      type: String,
+      default: 'Séries',
+    },
+    title: {
+      type: String,
+    },
+    simpleNavigation: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
@@ -42,6 +54,11 @@ export default {
   },
   methods: {
     scrollTopFixed() {
+
+      if (this.simpleNavigation === true) {
+        return false
+      }
+
       let element = document.querySelector('.breadcrumb-component')
 
       if (window.pageYOffset > 200) {
@@ -60,6 +77,7 @@ export default {
 @import '~/assets/scss/_variables.scss';
 
 .breadcrumb-component {
+  margin-bottom: 30px;
   @media only screen and (max-width: $breakpoint-xs) {
     display: none
   }
@@ -70,6 +88,7 @@ export default {
     left: 0;
     width: 100%;
     margin: 0 auto;
+    z-index: 1;
 
     .breadcrumb {
       margin: 0 auto;
