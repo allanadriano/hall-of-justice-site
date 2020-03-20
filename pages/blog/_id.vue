@@ -36,13 +36,13 @@
 </template>
 
 <script>
-import BlogService from '~/services/BlogService'
 import HallCardAuthor from '~/components/Author/CardAuthor'
 import HallChip from '~/components/Chip'
 import HallPolicy from '~/components/Policy'
 import HallBreadcrumb from '~/components/Navigation/Breadcrumb'
 import HallPagination from '~/components/Navigation/Pagination'
 import config from '~/config'
+import axios from 'axios'
 
 export default {
   name: 'BlogPost',
@@ -50,12 +50,15 @@ export default {
     return {
       description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
       image: 'https://placehold.it/1200x500&text=post image',
-      post: {},
       author: {
         name: 'Allan Oliveira',
         bio: 'Gosta de series, cinemas e outros assuntos nerds'
       }
     }
+  },
+  async asyncData ({ params }) {
+    const { data } = await axios.get(`${config.api.url}/posts/${params.id}`)
+    return { post: data }
   },
   head () {
     return {
@@ -77,19 +80,6 @@ export default {
         { property: 'og:image', content: this.image },
       ],
     };
-  },
-  methods: {
-    async getSingleArticle (id) {
-      this.post = await BlogService.getSingleArticle(id);
-    }
-  },
-  watch: {
-    '$route' () {
-      this.getSingleArticle(this.$route.params.id);
-    }
-  },
-  mounted () {
-    this.getSingleArticle(this.$route.params.id);
   },
   components: {
     HallCardAuthor,
