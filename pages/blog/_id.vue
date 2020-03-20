@@ -20,7 +20,7 @@
           <hall-card-author :author="author" />
           <div class="card-body">
             <hall-policy />
-            <vue-disqus shortname="hall-of-justice" />
+            <vue-disqus shortname="hall-of-justice" :identifier="`blog/${post.id}`" :url="linkPost"/>
           </div>
         </article>
 
@@ -87,6 +87,11 @@ export default {
     HallPolicy,
     HallBreadcrumb,
     HallPagination
+  },
+  computed: {
+    linkPost (post) {
+      return `${process.env.BASE_URL}/blog/${post.id}` || `https://hall-blog.herokuapp.com/blog/${post.id}`
+    }
   }
 }
 </script>
