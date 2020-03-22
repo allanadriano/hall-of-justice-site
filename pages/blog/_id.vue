@@ -22,10 +22,10 @@
             <hall-policy />
           </div>
           <div class="card-body">
-            <hall-box-share />
+            <hall-box-share :title="post.title" :url="urlArticle"/>
           </div>
           <div class="card-body">
-            <vue-disqus shortname="hall-of-justice" :identifier="`blog/${post.id}`" :url="linkPost"/>
+            <vue-disqus shortname="hall-of-justice" :identifier="`blog/${post.id}`" :url="urlArticle"/>
           </div>
         </article>
       </div>
@@ -91,8 +91,8 @@ export default {
     HallBoxShare
   },
   computed: {
-    linkPost (post) {
-      return `${process.env.BASE_URL}/blog/${post.id}` || `https://hall-blog.herokuapp.com/blog/${post.id}`
+    urlArticle (post) {
+      return `${process.env.BASE_URL}/blog/${this.post.id}` || `https://hall-blog.herokuapp.com/blog/${this.post.id}`
     }
   }
 }
