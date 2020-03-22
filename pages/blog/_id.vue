@@ -18,14 +18,16 @@
             <p class="card-post source">Fonte: <a href="#">Hall Of Justice</a></p>
           </div>
           <hall-card-author :author="author" />
-          <div class="card-body">
+          <div class="card-body policy">
             <hall-policy />
+          </div>
+          <div class="card-body">
+            <hall-box-share />
+          </div>
+          <div class="card-body">
             <vue-disqus shortname="hall-of-justice" :identifier="`blog/${post.id}`" :url="linkPost"/>
           </div>
         </article>
-
-        <hall-pagination />
-
       </div>
       <div class="col-md-3">
         <aside>menu lateral</aside>
@@ -40,7 +42,7 @@ import HallCardAuthor from '~/components/Author/CardAuthor'
 import HallChip from '~/components/Chip'
 import HallPolicy from '~/components/Policy'
 import HallBreadcrumb from '~/components/Navigation/Breadcrumb'
-import HallPagination from '~/components/Navigation/Pagination'
+import HallBoxShare from '~/components/BoxShare'
 import config from '~/config'
 import axios from 'axios'
 
@@ -86,7 +88,7 @@ export default {
     HallChip,
     HallPolicy,
     HallBreadcrumb,
-    HallPagination
+    HallBoxShare
   },
   computed: {
     linkPost (post) {

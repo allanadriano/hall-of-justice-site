@@ -1,6 +1,8 @@
 <template>
   <div class="card-author-component">
-    <img src="https://placehold.it/200x200" :alt="author.name" class="img-author">
+    <span>
+      <img src="https://placehold.it/200x200" :alt="author.name" class="img-author">
+    </span>
     <div class="social">
       <h2 class="author-name">{{ author.name }}</h2>
       <p class="author-bio">{{ author.bio }}</p>
@@ -38,6 +40,11 @@ export default {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+
+    @media only screen and (max-width: $breakpoint-xs) {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   .social {
@@ -48,12 +55,21 @@ export default {
         size: 22px;
         weight: 500
       }
+
+      @media only screen and (max-width: $breakpoint-xs) {
+        font-size: 16px;
+      }
     }
     .author-bio {
       opacity: 0.9;
       font-size: 16px;
       margin-top: 5px;
       margin-bottom: 10px;
+      text-transform: uppercase;
+
+      @media only screen and (max-width: $breakpoint-xs) {
+        font-size: 12px;
+      }
     }
   }
 }

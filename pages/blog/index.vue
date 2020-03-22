@@ -12,6 +12,11 @@
           :key="blog.id"
           :blog="blog"
         />
+
+        <div class="row justify-content-center">
+          <hall-pagination />
+        </div>
+
       </div>
       <div class="col-md-4">
         <aside>
@@ -26,6 +31,7 @@
 import HallCardFeed from '~/components/Blog/CardFeed'
 import BlogService from '~/services/BlogService'
 import HallBreadcrumb from '~/components/Navigation/Breadcrumb'
+import HallPagination from '~/components/Navigation/Pagination'
 
 export default {
   name: 'BlogFeed',
@@ -44,7 +50,8 @@ export default {
   },
   components: {
     HallCardFeed,
-    HallBreadcrumb
+    HallBreadcrumb,
+    HallPagination
   }
 }
 

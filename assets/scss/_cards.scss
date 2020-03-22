@@ -20,11 +20,18 @@
     &.info {
       padding: 15px 20px 0px
     }
+
+    &.policy {
+      @media only screen and (max-width: $breakpoint-xs) {
+        padding: 0px
+      }
+    }
   }
 
   .card-title {
     font-weight: 500;
     margin-bottom: 10px;
+    font-size: 28px;
 
     &.blog {
       text-transform: uppercase;
@@ -59,7 +66,7 @@
       }
 
       @media only screen and (max-width: $breakpoint-xs) {
-        font-size: 16px;
+        font-size: 18px;
       }
     }
   }
@@ -79,6 +86,11 @@
     &.description {
       opacity: 0.7;
       margin-bottom: 20px;
+      font-size: 16px;
+
+      @media only screen and (max-width: $breakpoint-xs) {
+        font-size: 12px;
+      }
     }
 
     &.source {
@@ -97,9 +109,6 @@
 
     @media only screen and (max-width: $breakpoint-sm) {
       font-size: 16px;
-    }
-    @media only screen and (max-width: $breakpoint-xs) {
-      font-size: 14px;
     }
   }
 
