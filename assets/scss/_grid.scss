@@ -2,7 +2,31 @@
 
 /* custom variables and configs */
 
-$gridColumns: 12;
+// $grid-columns:      12;
+// $grid-gutter-width: 30px;
+
+// $grid-breakpoints: (
+//   // Extra small screen / phone
+//   xs: 0,
+//   // Small screen / phone
+//   sm: 576px,
+//   // Medium screen / tablet
+//   md: 768px,
+//   // Large screen / desktop
+//   lg: 992px,
+//   // Extra large screen / wide desktop
+//   xl: 1200px
+// );
+
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1140px
+// );
+
+
+$grid-columns: 12;
 $screens: (
   "extra-large": "xl",
   "large": "lg",
@@ -10,8 +34,12 @@ $screens: (
   "small": "sm",
   "extra-small": "xs"
 );
-$max-width-container: 1200px;
+
 $max-width-container-fluid: 100%;
+$max-width-container-xl: 1140px;
+$max-width-container-lg: 960px;
+$max-width-container-md: 720px;
+$max-width-container-sm: 540px;
 
 /* end custom variables and configs */
 
@@ -25,8 +53,9 @@ $max-width-container-fluid: 100%;
 }
 
 .container {
-  max-width: $max-width-container;
   @include container-base;
+  max-width: $max-width-container-xl;
+
 }
 
 .container-fluid {
@@ -45,10 +74,10 @@ $max-width-container-fluid: 100%;
 
 /* grid generator */
 
-@for $i from 1 through $gridColumns {
+@for $i from 1 through $grid-columns {
 
   @each $screenType in map-values($screens) {
-    $size: 100% / $gridColumns;
+    $size: 100% / $grid-columns;
     $sizeColumn: $size * $i;
 
     @if $screenType == xs {

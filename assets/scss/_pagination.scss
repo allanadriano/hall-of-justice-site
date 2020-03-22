@@ -25,7 +25,7 @@
     }
 
     &:hover {
-      background: $light-slate-blue-color;
+      text-decoration: underline;
     }
   }
 
@@ -36,6 +36,11 @@
 
       a {
         padding: 8px 12px;
+
+        &:hover {
+          background: $light-slate-blue-color;
+          text-decoration: none;
+        }
 
         &.active {
           background: $light-slate-blue-color;
