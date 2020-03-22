@@ -91,8 +91,8 @@ export default {
     HallBoxShare
   },
   computed: {
-    urlArticle (post) {
-      return `${process.env.BASE_URL}/blog/${this.post.id}` || `https://hall-blog.herokuapp.com/blog/${this.post.id}`
+    urlArticle () {
+      return config.app.url + this.$route.fullPath
     }
   }
 }
