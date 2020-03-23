@@ -28,6 +28,7 @@ export default {
     margin-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 12px;
   }
 
   a {
