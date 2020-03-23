@@ -12,6 +12,7 @@
     <br />
 
     <nuxt />
+    <hall-shorcut-menu />
   </div>
 </template>
 
@@ -19,13 +20,15 @@
 import HallNavbar from '~/components/Navigation/Site/Navbar'
 import HallNavbarBlog from '~/components/Navigation/Blog/NavbarBlog'
 import HallBreadcrumb from '~/components/Navigation/Breadcrumb'
+import HallShorcutMenu from '~/components/Navigation/ShortcutMenu'
 
 export default {
   name: 'BlogLayout',
   components: {
     HallNavbar,
     HallNavbarBlog,
-    HallBreadcrumb
+    HallBreadcrumb,
+    HallShorcutMenu
   }
 }
 </script>

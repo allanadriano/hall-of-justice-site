@@ -1,5 +1,5 @@
 <template>
-  <article class="card-feed-component card blog">
+  <article :class="['card-feed-component card blog', { 'dark-mode' : darkMode }]">
     <nuxt-link :to="`blog/${blog.id}`" class="card-link">
     <div class="card-overlay">
       <img class="card-img blog" src="https://placehold.it/1200x500" :alt="blog.title" />
@@ -18,6 +18,7 @@
   </article>
 </template>
 <script>
+import { mapState, mapActions } from 'vuex'
 import HallChip from '~/components/Chip'
 import truncate from '~/filters/truncate'
 
@@ -34,6 +35,14 @@ export default {
   },
   components: {
     HallChip
+  },
+  computed: {
+    ...mapState({
+      darkMode: state => state.darkMode
+    })
+  },
+  methods: {
+    ...mapActions(['toggleDarkMode'])
   }
 }
 </script>
