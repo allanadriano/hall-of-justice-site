@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <div class="col-md-9">
-        <article class="card blog">
+        <article :class="['card blog', { 'dark-mode' : darkMode }]">
           <img src="https://placehold.it/1200x500" :alt="post.title" class="card-img blog post"  />
           <div class="card-body">
             <h1 class="card-title blog">{{ post.title }}</h1>
@@ -43,6 +43,7 @@ import HallChip from '~/components/Chip'
 import HallPolicy from '~/components/Policy'
 import HallBreadcrumb from '~/components/Navigation/Breadcrumb'
 import HallBoxShare from '~/components/BoxShare'
+import { mapState, mapActions } from 'vuex'
 import config from '~/config'
 import axios from 'axios'
 
@@ -93,7 +94,13 @@ export default {
   computed: {
     urlArticle () {
       return config.app.url + this.$route.fullPath
-    }
+    },
+    ...mapState({
+      darkMode: state => state.darkMode
+    })
+  },
+  methods: {
+    ...mapActions(['toggleDarkMode'])
   }
 }
 </script>
