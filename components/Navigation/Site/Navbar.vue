@@ -7,7 +7,7 @@
           Hall of Justice
         </nuxt-link>
 
-        <hall-menu-items class="hide-menu-sm" />
+        <hall-menu-items class="hide-small" />
 
         <transition name="menu-mobile">
           <div

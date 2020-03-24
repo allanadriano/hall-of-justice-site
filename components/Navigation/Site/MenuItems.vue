@@ -14,12 +14,17 @@
         Login
       </a>
     </li>
+    <hall-settings-site />
   </ul>
 </template>
 
 <script>
+import HallSettingsSite from './SettingsSite'
 export default {
   name: 'MenuItems',
+  components: {
+    HallSettingsSite
+  },
   methods: {
     subIsActive(input) {
       const paths = Array.isArray(input) ? input : [input];
