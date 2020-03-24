@@ -18,7 +18,7 @@
   </article>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
 import HallChip from '~/components/Chip'
 import truncate from '~/filters/truncate'
 
@@ -41,8 +41,5 @@ export default {
       darkMode: state => state.darkMode
     })
   },
-  methods: {
-    ...mapActions(['toggleDarkMode'])
-  }
 }
 </script>
