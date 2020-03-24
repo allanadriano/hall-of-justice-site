@@ -1,9 +1,9 @@
 <template>
-  <li :class="['settings-site-component menu-item', { 'active' : !isOpen }]">
-    <a @click="toggleMenu" :class="{'active' : !isOpen }">
+  <li :class="['settings-site-component menu-item', { 'active' : isOpen }]">
+    <a @click="toggleMenu" :class="{'active' : isOpen }">
       icon <span class="hide-medium">Configurações do site</span>
     </a>
-    <ul :class="['menu-sub-items', { 'hide' : isOpen }]">
+    <ul :class="['menu-sub-items', { 'hide' : !isOpen }]">
       <li class="menu-sub-item">
         <span>Modo dark</span>
           <hall-button-switch
@@ -45,12 +45,12 @@ export default {
       darkMode: state => state.darkMode
     })
   },
-  // mounted() {
-  //   window.addEventListener('click', this.clickOutSideMenuMobile)
-  // },
-  // beforeDestroy() {
-  //   window.removeEventListener('click', this.clickOutSideMenuMobile)
-  // },
+  mounted() {
+    window.addEventListener('click', this.clickOutSideMenuMobile)
+  },
+  beforeDestroy() {
+    window.removeEventListener('click', this.clickOutSideMenuMobile)
+  },
   methods: {
     ...mapActions(['toggleVisibilityShortcutMenu', 'toggleDarkMode']),
     toggleMenu () {
@@ -58,13 +58,12 @@ export default {
     },
     closeMenu () {
       this.isOpen = false
-    }
-    // clickOutSideMenuMobile(e) {
-    //   if (!this.$el.contains(e.target)) {
-    //     this.isOpen = false
-    //     console.log('click')
-    //   }
-    // },
+    },
+    clickOutSideMenuMobile(e) {
+      if (!this.$el.contains(e.target)) {
+        this.isOpen = false
+      }
+    },
   }
 }
 </script>
