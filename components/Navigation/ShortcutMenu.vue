@@ -1,6 +1,7 @@
 <template>
   <nav class="shortcut-menu-component" v-if="shorcutMenu">
     <ul class="menu-items justify-content-space-around">
+      <li class="menu-item"><nuxt-link to="/blog">Livros</nuxt-link></li>
       <li class="menu-item"><nuxt-link to="/blog">Blog</nuxt-link></li>
       <li class="menu-item"><nuxt-link to="/blog">Forum</nuxt-link></li>
       <li class="menu-item"><nuxt-link to="/blog">Perfil</nuxt-link></li>
@@ -49,6 +50,8 @@ export default {
     .menu-item {
       display: flex;
       align-items: center;
+      justify-content: center;
+      flex: 1;
       a {
         color: $white-color;
         font-size: 12px;

@@ -54,15 +54,17 @@
   .menu {
     display: flex;
     list-style: none;
+    position: relative;
+    cursor: pointer;
 
-    @media only screen and (max-width: $breakpoint-sm) {
-      flex-direction: column;
-    }
-
-    &.hide-menu-sm {
+    &.hide-small {
       @media only screen and (max-width: $breakpoint-sm) {
         display: none;
       }
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) {
+      flex-direction: column;
     }
 
     .menu-item {
@@ -132,6 +134,43 @@
         @media only screen and (max-width: $breakpoint-sm) {
           order: -1;
           background: $dark-primary-color;
+        }
+      }
+
+      .menu-sub-items {
+        position: absolute;
+        top: 38px;
+        list-style: none;
+        width: 180px;
+        background: $dark-color;
+        padding: 10px;
+        border-top: 2px solid $light-slate-blue-color;
+
+        @media only screen and (max-width: $breakpoint-sm) {
+          position: inherit;
+          width: 100%;
+          border: none;
+          padding: 0px;
+        }
+
+        .menu-sub-item {
+          font-size: 10px;
+          padding: 3px 5px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &.hide-medium {
+            display: none;
+            @media only screen and (max-width: $breakpoint-sm) {
+              display: flex;
+            }
+          }
+
+          @media only screen and (max-width: $breakpoint-sm) {
+            padding: 13px 20px;
+            font-size: 12px;
+          }
         }
       }
     }

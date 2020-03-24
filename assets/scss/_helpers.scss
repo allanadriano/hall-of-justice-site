@@ -1,0 +1,22 @@
+@import 'variables';
+
+.hide-medium {
+  display: none;
+  @media only screen and (max-width: $breakpoint-sm) {
+    display: block;
+  }
+}
+
+.hide-small {
+  @media only screen and (max-width: $breakpoint-sm) {
+    display: none;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.position-relative {
+  position: relative;
+}

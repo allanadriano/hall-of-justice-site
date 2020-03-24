@@ -43,7 +43,7 @@ import HallChip from '~/components/Chip'
 import HallPolicy from '~/components/Policy'
 import HallBreadcrumb from '~/components/Navigation/Breadcrumb'
 import HallBoxShare from '~/components/BoxShare'
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
 import config from '~/config'
 import axios from 'axios'
 
@@ -99,8 +99,5 @@ export default {
       darkMode: state => state.darkMode
     })
   },
-  methods: {
-    ...mapActions(['toggleDarkMode'])
-  }
 }
 </script>
