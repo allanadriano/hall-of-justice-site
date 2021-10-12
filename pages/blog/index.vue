@@ -8,8 +8,8 @@
     <div class="row">
       <div class="col-md-8">
         <hall-card-feed
-          v-for="blog in posts"
-          :key="blog.id"
+          v-for="(blog, index) in posts"
+          :key="index"
           :blog="blog"
         />
 

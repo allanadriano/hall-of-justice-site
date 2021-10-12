@@ -8,11 +8,11 @@
     <div class="row">
       <div class="col-md-9">
         <article :class="['card blog', { 'dark-mode' : darkMode }]">
-          <img src="https://placehold.it/1200x500" :alt="post.title" class="card-img blog post"  />
+          <img :src="`/img-${post.id}.jpg`" :alt="post.title" class="card-img blog post"  />
           <div class="card-body">
             <h1 class="card-title blog">{{ post.title }}</h1>
             <span class="date post">23 de janeiro de 2019</span>
-            <hall-chip info="Cinema" />
+            <hall-chip value="Cinema" />
             <p class="card-post description">{{ post.body }}</p> <!-- <<- post.description -->
             <p class="card-post" v-html="post.body"></p>
             <p class="card-post source">Fonte: <a href="#">Hall Of Justice</a></p>
@@ -49,16 +49,14 @@ import axios from 'axios'
 
 export default {
   name: 'BlogPost',
-  data () {
-    return {
-      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
-      image: 'https://placehold.it/1200x500&text=post image',
-      author: {
-        name: 'Allan Oliveira',
-        bio: 'Gosta de series, cinemas e outros assuntos nerds'
-      }
+  data:() => ({
+    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.',
+    image: 'https://placehold.it/1200x500&text=post image',
+    author: {
+      name: 'Allan Oliveira',
+      bio: 'Especialista em assuntos nerds como cinemas, séries e afins. '
     }
-  },
+  }),
   async asyncData ({ params }) {
     const { data } = await axios.get(`${config.api.url}/posts/${params.id}`)
     return { post: data }

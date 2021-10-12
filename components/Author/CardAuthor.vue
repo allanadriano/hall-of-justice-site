@@ -1,7 +1,7 @@
 <template>
   <div class="card-author-component">
     <span>
-      <img src="https://placehold.it/200x200" :alt="author.name" class="img-author">
+      <img src="/allan.jpg" :alt="author.name" class="img-author">
     </span>
     <div class="social">
       <h2 class="author-name">{{ author.name }}</h2>

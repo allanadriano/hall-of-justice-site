@@ -1,7 +1,7 @@
 <template>
   <nuxt-link to="/blog" class="chip-component chip">
-    <img src="https://placehold.it/50x50" :alt="info" />
-    {{ info }}
+    <img src="/allan.jpg" :alt="value" />
+    {{ value }}
   </nuxt-link>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   name: 'Chip',
   props: {
-    info: {
+    value: {
       type: String,
       required: true
     }

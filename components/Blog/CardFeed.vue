@@ -2,14 +2,14 @@
   <article :class="['card-feed-component card blog', { 'dark-mode' : darkMode }]">
     <nuxt-link :to="`blog/${blog.id}`" class="card-link">
     <div class="card-overlay">
-      <img class="card-img blog" src="https://placehold.it/1200x500" :alt="blog.title" />
+      <img class="card-img blog" :src="`/img-${blog.id}.jpg`" :alt="blog.title" />
       <h2 class="card-title blog feed">{{ blog.title }}</h2>
     </div>
     </nuxt-link>
     <div class="card-body info">
-      <hall-chip info="Allan Oliveira"/>
+      <hall-chip value="Allan Oliveira"/>
       <span class="date">12 de janeiro de 2020</span>
-      <hall-chip info="Cinema" />
+      <hall-chip value="Cinema" />
       <nuxt-link :to="`blog/${blog.id}`">Leia matéria</nuxt-link>
     </div>
     <div class="card-body">
